@@ -1,0 +1,27 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "React",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anushasani/React-Course.git"
+  },
+  "keywords": [
+    "Anusha",
+    "Sani"
+  ],
+  "author": "Anusha Sani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anushasani/React-Course/issues"
+  },
+  "homepage": "https://github.com/anushasani/React-Course#readme",
+  "dependencies": {
+    "parcel": "^2.11.0"
+  },
+  "main": "App.js",
+  "devDependencies": {}
+}
