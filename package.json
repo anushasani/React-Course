@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "React",
   "scripts": {
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -20,8 +22,15 @@
   },
   "homepage": "https://github.com/anushasani/React-Course#readme",
   "dependencies": {
-    "parcel": "^2.11.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "main": "App.js",
-  "devDependencies": {}
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "browserslist": [
+    "last 2 chrome version"
+  ]
 }
