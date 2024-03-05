@@ -2,8 +2,12 @@ import { CON_URL } from "../components/Utils/constants";
 
 export const RestaurantCard = (props) => {
   const { resData } = props;
+
+  if (!resData.id) {
+    return;
+  }
   const { name, cuisines, costForTwo, avgRating, cloudinaryImageId, sla } =
-    resData?.info || {};
+    resData;
 
   return (
     <div className="restCard">
@@ -13,7 +17,7 @@ export const RestaurantCard = (props) => {
         src={CON_URL + cloudinaryImageId}
       />
       <h3>{name}</h3>
-      <h4>{cuisines.join(",")}</h4>
+      <h4>{cuisines.join(",\n")}</h4>
       <h5>{costForTwo}</h5>
       <h5>{avgRating} Rating</h5>
       <h5>{sla.deliveryTime} minutes</h5>
