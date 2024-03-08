@@ -2,10 +2,13 @@ import { RestaurantCard } from "../components/RestaurantCard";
 import restList from "./Utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "../components/Shimmer";
+import { Link } from "react-router-dom";
 const Body = () => {
   const [ListOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setfilteredRestaurant] = useState([]);
   const [searchText, setsearchText] = useState("");
+
+  console.log("filteredRestaurant", filteredRestaurant);
 
   useEffect(() => {
     fetchData();
@@ -23,9 +26,6 @@ const Body = () => {
 
     setListOfRestaurant(mappedData);
     setfilteredRestaurant(mappedData);
-
-    console.log("filteredRestaurant", filteredRestaurant);
-    console.log("ListOfRestaurant", ListOfRestaurant);
   };
 
   return ListOfRestaurant.length === 0 ? (
@@ -53,6 +53,8 @@ const Body = () => {
             );
           });
           setfilteredRestaurant(filterRestaurant);
+
+          console.log("filterRestaurant", filterRestaurant);
         }}
       >
         Search
@@ -74,7 +76,9 @@ const Body = () => {
       </div>
       <div className="restContainer">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} resData={restaurant} />
+          <Link to={"/restaurants/" + restaurant.id}>
+            <RestaurantCard key={restaurant.id} resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
