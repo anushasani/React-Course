@@ -1,34 +1,33 @@
-// import React from "react";
-// (destructing in import)
 import { Component } from "react";
 
 class userPractice extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
+      userInfo: {
+        name: "dummy",
+        location: "dummmmy",
+      },
     };
-    console.log("Child Construtor");
   }
-  componentDidMount() {
-    console.log("Child component");
+  async componentDidMount() {
+    const data = await fetch("https://api.github.com/users/anushasani");
+    const json = await data.json();
+    console.log("json", json);
+
+    this.setState({
+      userInfo: json,
+    });
   }
 
   render() {
     console.log("Child Render");
-    const { name } = this.props;
-    const { count } = this.state;
+
+    const { name, location } = this.state.userInfo;
     return (
       <div>
-        <button
-          onClick={() => {
-            this.setState({ count: this.state.count + 1 });
-          }}
-        >
-          Add
-        </button>
-        <h2>{count}</h2>
         <h1> {name}</h1>
+        <h2>{location}</h2>
       </div>
     );
   }
