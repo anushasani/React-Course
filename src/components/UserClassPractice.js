@@ -8,9 +8,14 @@ class userPractice extends Component {
     this.state = {
       count: 0,
     };
+    console.log("Child Construtor");
+  }
+  componentDidMount() {
+    console.log("Child component");
   }
 
   render() {
+    console.log("Child Render");
     const { name } = this.props;
     const { count } = this.state;
     return (
