@@ -19,6 +19,11 @@ class userPractice extends Component {
       userInfo: json,
     });
   }
+  // when your directed another page
+
+  componentWillUnmount() {
+    console.log("directed to another page ");
+  }
 
   render() {
     console.log("Child Render");
