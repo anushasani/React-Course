@@ -3,6 +3,8 @@ import restList from "./Utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "../components/Shimmer";
 import { Link } from "react-router-dom";
+
+import useOnlineStatus from "./Utils/useOnlineStatus";
 const Body = () => {
   const [ListOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setfilteredRestaurant] = useState([]);
@@ -27,6 +29,11 @@ const Body = () => {
     setListOfRestaurant(mappedData);
     setfilteredRestaurant(mappedData);
   };
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) {
+    return <h1>"Ohhh lost internet connection "</h1>;
+  }
 
   return ListOfRestaurant.length === 0 ? (
     <Shimmer />
