@@ -1,10 +1,13 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import useRestaurantMenu from "./Utils/useRestaurantMenu";
+import useRestaurantMenu from "../../Utils/useRestaurantMenu";
+import { RestaurantCatogory } from "../components/RestaurantCatogory";
+import { useState } from "react";
 
 const Restaurantmenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
+  const [showIndex, setShowIndex] = useState(null);
 
   if (resInfo === null) {
     return <Shimmer />;
@@ -14,26 +17,33 @@ const Restaurantmenu = () => {
     resInfo?.cards[0]?.card?.card?.info;
 
   const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-  console.log(itemCards);
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+
+  const category =
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <p>
+    <div className=" text-center">
+      <h1 className="  text-2xl my-5 font-bold">{name}</h1>
+      <p className="  text-lg my-5 font-bold">
         {cuisines.join(", ")} : {costForTwoMessage}
       </p>
-      <ul>
-        {itemCards.map((item) => {
-          return (
-            <li key={item.card.info.id}>
-              {" "}
-              {item.card.info.name} -{" "}
-              {item.card.info.price || item.card.info.defaultPrice}{" "}
-            </li>
-          );
-        })}
-      </ul>
+      <div>
+        {category.map((category, index) => (
+          <RestaurantCatogory
+            key={category.card.card.title}
+            data={category?.card?.card}
+            showItems={index === showIndex ? true : false}
+            setShowIndex={() => {
+              setShowIndex(index);
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 };
