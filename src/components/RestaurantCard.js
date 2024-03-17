@@ -2,6 +2,7 @@ import { CON_URL } from "../../Utils/constants";
 
 export const RestaurantCard = (props) => {
   const { resData } = props;
+  console.log(resData);
 
   if (!resData.id) {
     return;

@@ -14,6 +14,7 @@ import UserContext from "./Utils/UserContext";
 
 const Applayout = () => {
   const [userInfo, setUserInfo] = useState();
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const data = {
@@ -25,7 +26,7 @@ const Applayout = () => {
   return (
     <UserContext.Provider value={{ logineUserName: userInfo, setUserInfo }}>
       <div className="app">
-        <Header />
+        <Header size={cart.length} />
 
         <Outlet />
       </div>
@@ -40,6 +41,7 @@ const appRouter = createBrowserRouter([
     element: <Applayout />,
     children: [
       { path: "/", element: <Body />, errorElement: <Error /> },
+
       {
         path: "/About",
         element: (

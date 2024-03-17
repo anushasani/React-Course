@@ -1,0 +1,64 @@
+{
+  "id": "600735",
+  "name": "EkDum Donne Biryani",
+  "cloudinaryImageId": "783ef884c15a08d6e8da7aa8e857bd92",
+  "locality": "Kariyammana Agrahara Road",
+  "areaName": "Kadubeesanahalli",
+  "costForTwo": "₹250 for two",
+  "cuisines": ["Biryani"],
+  "avgRating": 4.3,
+  "parentId": "358502",
+  "avgRatingString": "4.3",
+  "totalRatingsString": "100+",
+  "promoted": true,
+  "adTrackingId": "cid=11784385~p=1~eid=0000018e-4459-3d56-1b03-a7b1004e016c~srvts=1710543682902~83649",
+  "sla": {
+    "deliveryTime": 42,
+    "lastMileTravel": 9.4,
+    "serviceability": "SERVICEABLE",
+    "slaString": "40-45 mins",
+    "lastMileTravelString": "9.4 km",
+    "iconType": "ICON_TYPE_EMPTY"
+  },
+  "availability": {
+    "nextCloseTime": "2024-03-16 06:00:00",
+    "opened": true
+  },
+  "badges": {},
+  "isOpen": true,
+  "type": "F",
+  "badgesV2": {
+    "entityBadges": {
+      "textBased": {},
+      "imageBased": {},
+      "textExtendedBadges": {}
+    }
+  },
+  "aggregatedDiscountInfoV3": {
+    "header": "40% OFF",
+    "subHeader": "UPTO ₹80"
+  },
+  "orderabilityCommunication": {
+    "title": {},
+    "subTitle": {},
+    "message": {},
+    "customIcon": {}
+  },
+  "differentiatedUi": {
+    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    "differentiatedUiMediaDetails": {
+      "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+      "lottie": {},
+      "video": {}
+    }
+  },
+  "reviewsSummary": {},
+  "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+  "restaurantOfferPresentationInfo": {},
+  "externalRatings": {
+    "aggregatedRating": {
+      "rating": "--"
+    }
+  },
+  "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+}
